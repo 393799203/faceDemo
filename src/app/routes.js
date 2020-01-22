@@ -16,6 +16,7 @@ import {
 /* action */
 import * as layoutAction from 'actions/layout';
 import * as videoAction from 'actions/video';
+import * as videoDetailAction from 'actions/videoDetail';
 import * as avatarAction from 'actions/avatar';
 import * as opusAction from 'actions/opus';
 // import * as travelAuditListAction from 'actions/auditList';
@@ -59,7 +60,7 @@ var connectRedux = function(component, model = [], actions = null) {
 
 let Layout = connectRedux(LayoutView, ['layout'], layoutAction);
 let Video = connectRedux(VideoView, ['video'], videoAction);
-let VideoDetail = connectRedux(VideoDetailView, ['videoDetail'], videoAction);
+let VideoDetail = connectRedux(VideoDetailView, ['videoDetail'], videoDetailAction);
 let Avatar = connectRedux(AvatarView, ['avatar'], avatarAction);
 let Opus = connectRedux(OpusView, ['opus'], opusAction);
 

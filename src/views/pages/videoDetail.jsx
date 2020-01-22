@@ -23,7 +23,8 @@ export default class VideoList extends BaseComponent {
 	}
 
 	render() {
-		let { location } = this.props;
+		console.log(this.props);
+		let { location, avatarList, selectedFace, actions } = this.props;
 		return (
 			<div className="pageWrap">
 				<video id="player" controls preload="auto" poster={location.query.background} style={{'background': '#000'}}>
@@ -31,32 +32,18 @@ export default class VideoList extends BaseComponent {
 				</video>
 				<div className="weui-cells__title">选择要替换的头像</div>
 				<div className="weui-flex avatar-list">
-					<div className="avatar-item">
-						<div className="avatar">
-							<img src="https://s5.mogucdn.com/mlcdn/c45406/191204_0a7ecc5bjif6g7k1d7iaj8kl0k0k8_400x400.jpg_999x999.v1c0.81.webp" alt="范范饭" />
+					<For each="avatar" of={avatarList}>
+						<div className="avatar-item" key={avatar.id}>
+							<div className="avatar" onClick={() => { actions.selectCurrentFace(avatar.id) }}>
+								<img src={avatar.avatar} alt={avatar.name} />
+							</div>
+							<If condition={selectedFace == avatar.id}>
+								<Icon name="success"/>
+							</If>
 						</div>
-						<Icon name="success"/>
-					</div>
-					<div className="avatar-item">
-						<div className="avatar">
-							<img src="https://s5.mogucdn.com/mlcdn/c45406/191204_0a7ecc5bjif6g7k1d7iaj8kl0k0k8_400x400.jpg_999x999.v1c0.81.webp" alt="范范饭" />
-						</div>
-						<Icon name="success"/>
-					</div>
-					<div className="avatar-item">
-						<div className="avatar">
-							<img src="https://s5.mogucdn.com/mlcdn/c45406/191204_0a7ecc5bjif6g7k1d7iaj8kl0k0k8_400x400.jpg_999x999.v1c0.81.webp" alt="范范饭" />
-						</div>
-						<Icon name="success"/>
-					</div>
-					<div className="avatar-item">
-						<div className="avatar">
-							<img src="https://s5.mogucdn.com/mlcdn/c45406/191204_0a7ecc5bjif6g7k1d7iaj8kl0k0k8_400x400.jpg_999x999.v1c0.81.webp" alt="范范饭" />
-						</div>
-						<Icon name="success"/>
-					</div>																									
+					</For>
 				</div>
-				<a href="javascript:;" className="weui-btn weui-btn_primary weui-btn_loading faceBtn"><i class="weui-loading"></i>启动换脸</a>
+				<a href="javascript:;" className="weui-btn weui-btn_primary faceBtn">启动换脸</a>
 			</div>
 		)
 	}

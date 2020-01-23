@@ -34,10 +34,10 @@ export default class VideoList extends BaseComponent {
 				<div className="weui-flex avatar-list">
 					<For each="avatar" of={avatarList}>
 						<div className="avatar-item" key={avatar.id}>
-							<div className="avatar" onClick={() => { actions.selectCurrentFace(avatar.id) }}>
+							<div className="avatar" onClick={() => { actions.selectCurrentFace(avatar) }}>
 								<img src={avatar.avatar} alt={avatar.name} />
 							</div>
-							<If condition={selectedFace == avatar.id}>
+							<If condition={selectedFace.id == avatar.id}>
 								<Icon name="success"/>
 							</If>
 						</div>

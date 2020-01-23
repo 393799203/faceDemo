@@ -1,7 +1,7 @@
 import * as ActionTypes from '../constants/ActionTypes';
 
 const initialState = {
-	selectedFace: "",
+	selectedFace: {},
 	avatarList: [{
 		id: "ssafdera",
 		avatar: 'https://s5.mogucdn.com/mlcdn/c45406/191204_0a7ecc5bjif6g7k1d7iaj8kl0k0k8_400x400.jpg_999x999.v1c0.81.webp',
@@ -15,10 +15,10 @@ const initialState = {
 
 function handler(state = initialState, action) {
 	switch (action.type) {
-		case ActionTypes.SET_FACE:
+		case ActionTypes.SET_FACE_IN_DETAIL:
 			{
 				return Object.assign({}, state, {
-					selectedFace: action.faceId
+					selectedFace: action.face
 				})
 			}
 		default:

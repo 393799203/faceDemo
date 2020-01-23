@@ -108,6 +108,24 @@
 	}
 }
 
+.listView{
+	.avatar{
+		float: left;
+		width: 1.65rem;
+		height: 1.65rem;
+		margin-right: .18rem;
+		margin-bottom: .18rem;
+		display: block;
+	    overflow: hidden;
+	    img{
+	    	width: 100%;
+	    }
+	}			
+}
+.gallery-show{
+	display: block;
+}
+
 
 
 

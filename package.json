@@ -46,7 +46,7 @@
         "jsx-control-statements": "^3.1.2",
         "khaos-patched": "^0.9.3",
         "less-loader": "^2.2.3",
-        "node-sass": "^4.13.1",
+        "node-sass": "^7.0.0",
         "normalize.css": "4.1.1",
         "open-browser-webpack-plugin": "0.0.3",
         "prompt-for-patched": "^1.1.3",
